@@ -110,6 +110,119 @@ fatal: Could not read from remote repository.
 
 ### Comandos do Rafael 
 
+compuni@LAB6M28 MINGW64 ~
+$ git config --global user.name
+RafaelBruza
+
+compuni@LAB6M28 MINGW64 ~
+$ git config --global user.email
+rafaelbruza@hotmail.com
+
+
+
+
+
+git config --global user.email rafaelbruza@hotmail.com
+
+compuni@LAB6M28 MINGW64 ~
+$ git config --global --unset user.name
+
+compuni@LAB6M28 MINGW64 ~
+$ git config --global --unset user.email
+
+compuni@LAB6M28 MINGW64 ~
+$ ls -al ~/.ssh
+total 33
+drwxr-xr-x 1 compuni 1049089    0 Apr 11 20:16 ./
+drwxr-xr-x 1 compuni 1049089    0 Apr 11 20:19 ../
+-rw-r--r-- 1 compuni 1049089 3389 Apr 11 20:16 id_rsa
+-rw-r--r-- 1 compuni 1049089  746 Apr 11 20:16 id_rsa.pub
+-rw-r--r-- 1 compuni 1049089  828 Mar 28 19:56 known_hosts
+-rw-r--r-- 1 compuni 1049089   92 Mar 28 19:56 known_hosts.old
+
+compuni@LAB6M28 MINGW64 ~
+$ rm -f ~/.ssh/id_rsa*
+
+compuni@LAB6M28 MINGW64 ~
+$ git config --global user.name RafaelBruza
+
+compuni@LAB6M28 MINGW64 ~
+$ ^C
+
+compuni@LAB6M28 MINGW64 ~
+$ git config --global user.email "rafaelbruza@hotmail.com"
+
+compuni@LAB6M28 MINGW64 ~
+$ ssh-keygen -t rsa -b 4096 -C "rafaelbruza@hotmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/compuni/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/compuni/.ssh/id_rsa
+Your public key has been saved in /c/Users/compuni/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:pLSC7Qyt4ZrMwyy4iuWo+xH4yhaeGGJsZJHhX3PhHMs rafaelbruza@hotmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+| .o    o         |
+|.o    + +        |
+| ..  o.E.        |
+| +.+..o+         |
+|= =.+ o S        |
+|oB B .           |
+|X.O o            |
+|O# .             |
+|/B+              |
++----[SHA256]-----+
+
+compuni@LAB6M28 MINGW64 ~
+$ eval "$(ssh-agent -s)"
+Agent pid 748
+
+compuni@LAB6M28 MINGW64 ~
+$ ssh-add ~/.ssh/id_rsa
+Identity added: /c/Users/compuni/.ssh/id_rsa (rafaelbruza@hotmail.com)
+
+compuni@LAB6M28 MINGW64 ~
+$ clip < ~/.ssh/id_rsa.pub
+
+compuni@LAB6M28 MINGW64 ~
+$ git clone git@github.com:lucasG103/Atividade-GIT.git
+Cloning into 'Atividade-GIT'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (6/6), done.
+
+compuni@LAB6M28 MINGW64 ~
+$ cd Atividade-GIT
+
+compuni@LAB6M28 MINGW64 ~/Atividade-GIT (main)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+
+compuni@LAB6M28 MINGW64 ~/Atividade-GIT (main)
+$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+compuni@LAB6M28 MINGW64 ~/Atividade-GIT (main)
+$ git add .
+
+compuni@LAB6M28 MINGW64 ~/Atividade-GIT (main)
+$ git commit -m "criado o arquivo algoritmo.por"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+compuni@LAB6M28 MINGW64 ~/Atividade-GIT (main)
 
 
 ## Observações
